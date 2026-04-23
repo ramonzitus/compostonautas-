@@ -103,6 +103,21 @@ const participationPaths = [
   },
 ];
 
+const CONTACT = {
+  whatsappUrl: "https://chat.whatsapp.com/KnS2HTdCrEc4HATyhDMyNF",
+  contactEmail: "compostonautas@gmail.com",
+  openCallDateLabel: "data da chamada aberta: em breve",
+};
+
+const HERO_COPY = {
+  eyebrow: "chamada aberta em órbita",
+  paragraph:
+    "A Semana da Compostagem 2026 marca a abertura da campanha de 10 anos do Compostonautas. Entre no grupo, receba o chamado e descubra como ativar seu território.",
+  primaryCta: "Entrar no grupo do WhatsApp",
+  secondaryCta: "Receber convite da chamada aberta",
+  tertiaryCta: "Ativar meu território",
+};
+
 const Home = () => {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
@@ -138,14 +153,31 @@ const Home = () => {
           
           <div className="relative z-20 text-center px-4 max-w-6xl mx-auto flex flex-col items-center mt-2 md:mt-4">
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-              className="mb-4 flex flex-wrap items-center justify-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-white/60"
+              initial={{ opacity: 1 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4 }}
+              className="mt-5 flex flex-col sm:flex-row gap-3"
             >
-              <span className="border border-[#ffb000]/50 bg-[#ffb000]/10 px-4 py-2 text-[#ffb000]">Semana da Compostagem 2026 · 10 anos de Compostonautas</span>
-              <span className="border border-white/15 px-4 py-2">03–09/05/26</span>
-              <span className="border border-white/15 px-4 py-2">Chamada aberta</span>
+              <a
+                href={CONTACT.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-[#ffb000] text-black px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all"
+              >
+                {HERO_COPY.primaryCta}
+              </a>
+              <a
+                href="#chamada"
+                className="bg-[#f5f1e8] text-black px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all"
+              >
+                {HERO_COPY.secondaryCta}
+              </a>
+              <a
+                href="#rede"
+                className="border border-white/25 px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold text-white/80 hover:border-[#ffb000] hover:text-[#ffb000] transition-colors"
+              >
+                {HERO_COPY.tertiaryCta}
+              </a>
             </motion.div>
 
             <motion.h2 
@@ -154,7 +186,7 @@ const Home = () => {
               transition={{ duration: 1, ease: "easeOut" }}
               className="font-caveat text-3xl md:text-5xl text-[#ffb000] mb-2 transform -rotate-3"
             >
-              chamada aberta em órbita
+              {HERO_COPY.eyebrow}
             </motion.h2>
             
             <motion.h1 
@@ -173,7 +205,7 @@ const Home = () => {
               transition={{ duration: 0.4 }}
               className="font-mono text-xs md:text-sm text-white/70 tracking-widest max-w-3xl mt-3 leading-relaxed"
             >
-              Participe da mobilização da Semana da Compostagem 2026 e da campanha de 10 anos do Compostonautas. Entre no grupo, receba o convite da chamada aberta e descubra como ativar seu território.
+              {HERO_COPY.paragraph}
             </motion.p>
 
             <motion.div
@@ -182,8 +214,13 @@ const Home = () => {
               transition={{ duration: 0.4 }}
               className="mt-5 flex flex-col sm:flex-row gap-3"
             >
-              <a href="#participar" className="bg-[#ffb000] text-black px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all">
-                Entrar no grupo do WhatsApp
+              <a
+                href={CONTACT.whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="bg-[#ffb000] text-black px-4 py-2 -mt-2 font-bold hover:bg-white transition-colors"
+              >
+                WHATSAPP
               </a>
               <a href="#chamada" className="bg-[#f5f1e8] text-black px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all">
                 Receber convite da chamada aberta
@@ -461,7 +498,7 @@ const Home = () => {
                 Estamos mapeando pessoas, coletivos, escolas, espaços e parceiros que queiram levar ações para a Semana da Compostagem 2026. Deixe seu interesse e receba os próximos chamados.
               </p>
               <div className="mt-10 inline-flex border border-[#ffb000]/40 bg-[#ffb000]/10 px-5 py-3 font-mono text-xs uppercase tracking-[0.22em] text-[#ffb000]">
-                data da chamada aberta: em breve
+                {CONTACT.openCallDateLabel}
               </div>
             </div>
 
@@ -483,7 +520,7 @@ const Home = () => {
                 </select>
               </div>
               <div className="mt-6 grid gap-3">
-                <a href="mailto:contato@compostonautas.com?subject=Interesse%20na%20Semana%20da%20Compostagem%202026" className="bg-black text-[#ffb000] px-6 py-4 font-space uppercase tracking-widest text-xs font-bold text-center hover:bg-[#1a3d2a] hover:text-white transition-colors">
+                <a href={`mailto:${CONTACT.contactEmail}?subject=Interesse%20na%20Semana%20da%20Compostagem%202026`} className="bg-black text-[#ffb000] px-6 py-4 font-space uppercase tracking-widest text-xs font-bold text-center hover:bg-[#1a3d2a] hover:text-white transition-colors">
                   Quero receber os próximos chamados
                 </a>
                 <a href="#participar" className="border-[3px] border-black px-6 py-4 font-space uppercase tracking-widest text-xs font-bold text-center hover:bg-[#ffb000] transition-colors">
@@ -594,7 +631,7 @@ const Home = () => {
             <div className="flex gap-8 md:gap-12 font-mono text-xs tracking-widest uppercase">
               <a href="#participar" className="text-white/40 hover:text-[#ffb000] transition-colors">WhatsApp</a>
               <a href="#dez" className="text-white/40 hover:text-[#ffb000] transition-colors">Manifesto</a>
-              <a href="mailto:contato@compostonautas.com" className="text-white/40 hover:text-[#ffb000] transition-colors">Contato</a>
+              <a href={`mailto:${CONTACT.contactEmail}`} className="text-white/40 hover:text-[#ffb000] transition-colors">Contato</a>
             </div>
             
             <span className="font-caveat text-xl text-white/30">compostagem, cultura regenerativa e mobilização comunitária em novo ciclo</span>
