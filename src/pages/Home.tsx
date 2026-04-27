@@ -396,7 +396,7 @@ const Home = () => {
                     <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-white/45">
                       {pillar.eyebrow}
                     </div>
-
+                  </div>
                   <h2
                     className="font-anton text-[5.5rem] md:text-[6.5rem] lg:text-[7.5rem] leading-[0.8] tracking-wide text-[#f5f1e8] group-hover:translate-x-2 transition-transform duration-500"
                     style={{ textShadow: `0 0 34px ${pillar.accent}22` }}
@@ -577,7 +577,7 @@ const Home = () => {
           
           <div className="max-w-7xl mx-auto px-5 relative z-10">
             <div className="text-center mb-24">
-              <h2 className="font-caveat text-5xl md:text-7xl text-black mb-6 transform -rotate-2">pessoas & fungos</h2>
+              <h2 className="font-caveat text-5xl md:text-7xl text-black mb-6 transform -rotate-2">raspas e restos me interessam</h2>
               <h3 className="font-anton text-7xl md:text-[8rem] uppercase leading-[0.9] tracking-tighter text-black">
                 Como participar
               </h3>

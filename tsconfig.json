@@ -9,7 +9,6 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "types": ["node", "vite/client"],
     "resolveJsonModule": true,
-    "allowImportingTsExtensions": true,
     "skipLibCheck": true,
     "baseUrl": ".",
     "paths": {
