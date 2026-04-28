@@ -51,6 +51,7 @@ const triadPillars = [
   {
     eyebrow: "Pés no chão",
     title: "TELLUS",
+    classTag: "▣ LVL 01 · SOLO",
     copy: "Compostagem, território e ação local. Pés no chão para ativar oficinas, mutirões, encontros e práticas vivas nos territórios.",
     accent: "#9caf88",
     texture: "radial-gradient(circle at 78% 92%, rgba(156,175,136,0.16), transparent 20%), radial-gradient(circle at 0% 0%, rgba(255,176,0,0.08), transparent 32%)",
@@ -58,6 +59,7 @@ const triadPillars = [
   {
     eyebrow: "Mãos no touch",
     title: "CYBER",
+    classTag: "▥ LVL 02 · REDE",
     copy: "Rede, toque e mobilização. Mãos no touch para conectar pessoas, espalhar chamados e fortalecer a campanha em rede.",
     accent: "#ffb000",
     texture: "linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px)",
@@ -65,6 +67,7 @@ const triadPillars = [
   {
     eyebrow: "Cabeça na nuvem",
     title: "ASTRA",
+    classTag: "✦ LVL 03 · VISÃO",
     copy: "Visão, imaginação e próximo ciclo. Cabeça na nuvem para abrir a campanha dos 10 anos e apontar novos futuros Compostonautas.",
     accent: "#60a5fa",
     texture: "radial-gradient(1.5px 1.5px at 20% 30%, rgba(255,255,255,0.65), transparent), radial-gradient(1px 1px at 70% 60%, rgba(255,255,255,0.45), transparent), linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px)",
@@ -352,7 +355,7 @@ const Home = () => {
         </div>
       </section>
 
-        <section id="triade" className="bg-[#] text-[#050505] p-3 md:p-6">
+        <section id="triade" className="bg-[#050505] text-[#f5f1e8] p-3 md:p-6">
                         <div className="lg:w-1/3 sticky top-32">
                 <div className="flex items-center gap-4 mb-6">
                   <div className="h-[1px] w-12 bg-[#ffb000]"></div>
@@ -370,6 +373,16 @@ const Home = () => {
                 className="relative min-h-[430px] md:min-h-[420px] p-8 md:p-10 border-b md:border-b-0 md:border-r last:border-r-0 border-white/10 overflow-hidden group flex flex-col justify-between"
               >
                 <div
+                  className="absolute top-6 right-6 z-30 font-mono text-[9px] uppercase tracking-[0.18em] px-2 py-1 border bg-black/70"
+                  style={{
+                    color: pillar.accent,
+                    borderColor: `${pillar.accent}66`,
+                    boxShadow: `0 0 18px ${pillar.accent}33`,
+                  }}
+                >
+                  {pillar.classTag}
+                </div>
+                <div
                   className="absolute inset-0 opacity-70 group-hover:opacity-100 transition-opacity duration-700"
                   style={{
                     backgroundImage: pillar.texture,
@@ -379,8 +392,10 @@ const Home = () => {
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/20 to-[#050505]/70"></div>
                 <div className="absolute -bottom-24 -right-20 w-64 h-64 rounded-full border border-white/10 group-hover:border-white/20 transition-colors"></div>
                 <div className="relative z-10">
-                  <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-white/45 mb-6">
-                    {pillar.eyebrow}
+                  <div className="flex items-start justify-between gap-4 mb-6">
+                    <div className="font-mono text-[10px] uppercase tracking-[0.35em] text-white/45">
+                      {pillar.eyebrow}
+                    </div>
                   </div>
                   <h2
                     className="font-anton text-[5.5rem] md:text-[6.5rem] lg:text-[7.5rem] leading-[0.8] tracking-wide text-[#f5f1e8] group-hover:translate-x-2 transition-transform duration-500"
@@ -388,6 +403,12 @@ const Home = () => {
                   >
                     {pillar.title}
                   </h2>
+                  <div
+                    className="mt-4 font-mono text-xs tracking-[0.3em] opacity-70"
+                    style={{ color: pillar.accent }}
+                  >
+                    █ █ ░ ░
+                  </div>
                 </div>
                 <div className="relative z-10">
                   <div
