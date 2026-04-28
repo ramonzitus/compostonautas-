@@ -556,7 +556,7 @@ const Home = () => {
           
           <div className="max-w-7xl mx-auto px-5 relative z-10">
             <div className="text-center mb-24">
-              <h2 className="font-caveat text-5xl md:text-7xl text-black mb-6 transform -rotate-2">pessoas & fungos</h2>
+              <h2 className="font-caveat text-5xl md:text-7xl text-black mb-6 transform -rotate-2">raspas e restos me interessam</h2>
               <h3 className="font-anton text-7xl md:text-[8rem] uppercase leading-[0.9] tracking-tighter text-black">
                 Como participar
               </h3>
