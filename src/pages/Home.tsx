@@ -156,32 +156,30 @@ const Home = () => {
   });
 
   React.useEffect(() => {
+  const targetDate = new Date("2026-11-30T00:00:00-03:00").getTime();
 
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
 
-    const targetDate = new Date("2026-11-30T00:00:00-03:00").getTime();
+    if (distance <= 0) {
+      setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+      return;
+    }
 
-    const updateCountdown = () => {
-      const now = new Date().getTime();
-      const distance = targetDate - now;
+    setTimeLeft({
+      days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+      hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
+      minutes: Math.floor((distance / (1000 * 60)) % 60),
+      seconds: Math.floor((distance / 1000) % 60),
+    });
+  };
 
-      if (distance <= 0) {
-        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-        return;
-      }
+  updateCountdown();
+  const timer = window.setInterval(updateCountdown, 1000);
 
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((distance / (1000 * 60)) % 60),
-        seconds: Math.floor((distance / 1000) % 60),
-      });
-    };
-
-    updateCountdown();
-    const timer = window.setInterval(updateCountdown, 1000);
-
-    return () => window.clearInterval(timer);
-  }, []);
+  return () => window.clearInterval(timer);
+}, []);
 
   return (
     <div className="bg-[#050505] text-[#f5f1e8] min-h-[100dvh] selection:bg-[#ffb000] selection:text-black font-sans relative overflow-x-hidden">
@@ -327,8 +325,10 @@ const Home = () => {
             </div>
           </div>
         </section>
-
-        <section id="contagem" className="relative bg-[#050505] text-[#f5f1e8] px-5 md:px-12 py-20 md:py-28 border-y border-white/10 overflow-hidden">
+        <section
+          id="contagem"
+          className="relative bg-[#050505] text-[#f5f1e8] px-5 md:px-12 py-20 md:py-28 border-y border-white/10 overflow-hidden"
+        >
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
             <div className="font-anton text-[18vw] leading-none text-white uppercase tracking-tight">
               30/11
@@ -345,35 +345,29 @@ const Home = () => {
             </h2>
 
             <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
-              Um ciclo de 10 anos se fecha. Outro começa a entrar em órbita.
-            </p>
-            <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
-              Transição em andamento!
-            </p>
-
-            <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
               Destino: Dia do Compostonauta!
             </p>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">
-                {[
-                  ["Dias", timeLeft.days],
-                  ["Horas", timeLeft.hours],
-                  ["Minutos", timeLeft.minutes],
-                  ["Segundos", timeLeft.seconds],
-                ].map(([label, value]) => (
-                  <div
-                    key={label}
-                    className="border border-white/15 bg-white/[0.03] p-6 md:p-8"
-                  >
-                    <div className="font-anton text-5xl md:text-7xl text-[#ffb000] leading-none">
-                      {String(value).padStart(2, "0")}
-                    </div>
-                    <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-white/45">
-                      {label}
-                    </div>
-                  </div>
 
-              </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">
+              {[
+                ["Dias", timeLeft.days],
+                ["Horas", timeLeft.hours],
+                ["Minutos", timeLeft.minutes],
+                ["Segundos", timeLeft.seconds],
+              ].map(([label, value]) => (
+                <div
+                  key={label}
+                  className="border border-white/15 bg-white/[0.03] p-6 md:p-8"
+                >
+                  <div className="font-anton text-5xl md:text-7xl text-[#ffb000] leading-none">
+                    {String(value).padStart(2, "0")}
+                  </div>
+                  <div className="mt-4 font-mono text-[10px] uppercase tracking-[0.3em] text-white/45">
+                    {label}
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
