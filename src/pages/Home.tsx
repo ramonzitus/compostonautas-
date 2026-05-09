@@ -82,7 +82,7 @@ const viralCards = [
     image: "/images/floranauta.png",
     imagePosition: "object-top",
     overlay: "bg-black/45",
-    tone: "text-[#f5f1e8] rotate-[-2deg]",
+    tone: "text-[#60a5fa] rotate-[-2deg]",
   },
   {
     kind: "manifesto",
@@ -91,7 +91,7 @@ const viralCards = [
     image: "/images/jesus-meme.png",
     imagePosition: "object-top",
     overlay: "bg-black/60",
-    tone: "text-[#f5f1e8] rotate-[1deg]",
+    tone: "text-[#60a5fa] rotate-[1deg]",
   },
   {
     kind: "convocação",
@@ -100,7 +100,7 @@ const viralCards = [
     image: "/images/raul-meme.png",
     imagePosition: "object-top",
     overlay: "bg-black/50",
-    tone: "text-[#f5f1e8] rotate-[-1deg]",
+    tone: "text-[#60a5fa] rotate-[-1deg]",
   },
 ];
 
@@ -341,11 +341,14 @@ const Home = () => {
             </p>
 
             <h2 className="font-anton uppercase text-5xl md:text-8xl leading-[0.9] tracking-tight mb-8">
-              Contagem para o próximo chamado
+              Contagem regressiva
             </h2>
 
             <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
               Um ciclo de 10 anos se fecha. Outro começa a entrar em órbita.
+            </p>
+            <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
+              Transição em andamento!
             </p>
 
             {!countdownStarted ? (
@@ -353,9 +356,12 @@ const Home = () => {
                 onClick={() => setCountdownStarted(true)}
                 className="bg-[#ffb000] text-black px-8 py-5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all"
               >
-                Iniciar contagem regressiva
+                Ver tempo de chegada
               </button>
             ) : (
+            <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
+              Destino: Dia do Compostonauta!
+            </p>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">
                 {[
                   ["Dias", timeLeft.days],
@@ -714,7 +720,75 @@ const Home = () => {
             </div>
           </div>
         </section>
+        <section
+          id="chamados"
+          className="relative bg-[#050505] text-[#f5f1e8] px-5 md:px-12 py-20 md:py-28 border-y border-white/10 overflow-hidden"
+        >
+          <div className="absolute inset-0 opacity-[0.04] pointer-events-none">
+            <div className="font-anton text-[18vw] leading-none text-white uppercase tracking-tight">
+              CHAMADOS
+            </div>
+          </div>
 
+          <div className="relative z-10 max-w-5xl mx-auto grid md:grid-cols-[1fr_420px] gap-10 md:gap-16 items-center">
+            <div>
+              <p className="font-mono text-[10px] uppercase tracking-[0.35em] text-[#ffb000] mb-5">
+                receber os chamados
+              </p>
+
+              <h2 className="font-anton uppercase text-5xl md:text-7xl leading-[0.9] tracking-tight mb-6">
+                Fique na escuta da próxima órbita
+              </h2>
+
+              <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl">
+                Deixe seu e-mail para receber novidades, convites, datas importantes e próximos chamados da campanha de 10 anos do Compostonautas.
+              </p>
+            </div>
+
+            <form
+              name="chamados"
+              method="POST"
+              data-netlify="true"
+              className="bg-[#f5f1e8] text-black border-[4px] border-black shadow-[10px_10px_0_#ffb000] p-6 md:p-8"
+            >
+              <input type="hidden" name="form-name" value="chamados" />
+
+              <label className="block font-mono text-[10px] uppercase tracking-[0.25em] mb-3">
+                seu e-mail
+              </label>
+
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="voce@email.com"
+                className="w-full border-[3px] border-black bg-white px-4 py-4 font-mono text-sm outline-none mb-5"
+              />
+
+              <label className="block font-mono text-[10px] uppercase tracking-[0.25em] mb-3">
+                nome ou território <span className="opacity-50">(opcional)</span>
+              </label>
+
+              <input
+                type="text"
+                name="territorio"
+                placeholder="nome, cidade ou território"
+                className="w-full border-[3px] border-black bg-white px-4 py-4 font-mono text-sm outline-none mb-6"
+              />
+
+              <button
+                type="submit"
+                className="w-full bg-black text-[#ffb000] px-6 py-4 font-space uppercase tracking-widest text-xs font-bold hover:bg-[#ffb000] hover:text-black transition-colors"
+              >
+                Receber os chamados
+              </button>
+
+              <p className="mt-5 font-mono text-[10px] leading-relaxed text-black/55">
+                Sem spam. Só sinais importantes da campanha, da Semana da Compostagem e do Dia do Compostonauta.
+              </p>
+            </form>
+          </div>
+        </section>
         <section id="chamada" className="relative bg-[#0a0a0a] text-[#f5f1e8] px-5 md:px-12 py-28 md:py-40 overflow-hidden grain">
           <div className="absolute inset-0 opacity-[0.12]" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)", backgroundSize: "64px 64px" }}></div>
           <div className="max-w-7xl mx-auto relative z-10 grid lg:grid-cols-12 gap-12 items-start">
