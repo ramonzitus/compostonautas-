@@ -147,7 +147,7 @@ const Home = () => {
   const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
   const y2 = useTransform(scrollY, [0, 1000], [0, -100]);
 
-    const [countdownStarted, setCountdownStarted] = React.useState(false);
+    const countdownStarted = true;
   const [timeLeft, setTimeLeft] = React.useState({
     days: 0,
     hours: 0,
@@ -156,7 +156,7 @@ const Home = () => {
   });
 
   React.useEffect(() => {
-    if (!countdownStarted) return;
+
 
     const targetDate = new Date("2026-11-30T00:00:00-03:00").getTime();
 
@@ -181,7 +181,7 @@ const Home = () => {
     const timer = window.setInterval(updateCountdown, 1000);
 
     return () => window.clearInterval(timer);
-  }, [countdownStarted]);
+  }, []);
 
   return (
     <div className="bg-[#050505] text-[#f5f1e8] min-h-[100dvh] selection:bg-[#ffb000] selection:text-black font-sans relative overflow-x-hidden">
@@ -233,7 +233,7 @@ const Home = () => {
                 {HERO_COPY.primaryCta}
               </a>
               <a
-                href="#chamada"
+                href="#chamados"
                 className="bg-[#f5f1e8] text-black px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all"
               >
                 {HERO_COPY.secondaryCta}
@@ -288,7 +288,7 @@ const Home = () => {
               >
                 WHATSAPP
               </a>
-              <a href="#chamada" className="bg-[#f5f1e8] text-black px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all">
+              <a href="#chamados" className="bg-[#f5f1e8] text-black px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all">
                 Receber convite da chamada aberta
               </a>
               <a href="#rede" className="border border-white/25 px-6 py-3.5 font-space uppercase tracking-widest text-xs font-bold text-white/80 hover:border-[#ffb000] hover:text-[#ffb000] transition-colors">
@@ -350,12 +350,7 @@ const Home = () => {
             <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
               Transição em andamento!
             </p>
-              <button
-                onClick={() => setCountdownStarted(true)}
-                className="bg-[#ffb000] text-black px-8 py-5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all"
-              >
-                Ver tempo de chegada
-              </button>
+
             <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
               Destino: Dia do Compostonauta!
             </p>
@@ -377,7 +372,7 @@ const Home = () => {
                       {label}
                     </div>
                   </div>
-                ))}
+
               </div>
           </div>
         </section>
@@ -688,7 +683,7 @@ const Home = () => {
                   <div>
                     <h4 className="font-anton uppercase text-4xl md:text-5xl leading-[0.9] mb-6">{path.title}</h4>
                     <p className="text-white/65 leading-relaxed">{path.copy}</p>
-                    <a href="#chamada" className="mt-8 inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[#ffb000] hover:text-white transition-colors">
+                    <a href="#chamados" className="mt-8 inline-flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.25em] text-[#ffb000] hover:text-white transition-colors">
                       {path.action} <ArrowRight className="w-4 h-4" />
                     </a>
                   </div>
@@ -708,7 +703,7 @@ const Home = () => {
                 Quero ativar meu território <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="#chamada"
+                href="#chamados"
                 className="bg-[#f5f1e8] text-black px-10 py-5 rounded-full font-space uppercase tracking-widest text-sm font-bold border-2 border-black hover:bg-black hover:text-[#ffb000] transition-all duration-300"
               >
                 Receber os chamados
@@ -733,7 +728,7 @@ const Home = () => {
               </p>
 
               <h2 className="font-anton uppercase text-5xl md:text-7xl leading-[0.9] tracking-tight mb-6">
-                Fique na escuta da próxima órbita
+                Fique na escuta
               </h2>
 
               <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-2xl">
@@ -964,7 +959,7 @@ const Home = () => {
               <a href="https://chat.whatsapp.com/C6C4HYTg801KH2Ok6cDYdS" className="bg-[#ffb000] text-black px-8 py-4 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black hover:bg-white transition-colors">
                 Entrar no grupo
               </a>
-              <a href="#chamada" className="border border-white/20 px-8 py-4 font-space uppercase tracking-widest text-xs font-bold text-white/75 hover:border-[#ffb000] hover:text-[#ffb000] transition-colors">
+              <a href="#chamados" className="border border-white/20 px-8 py-4 font-space uppercase tracking-widest text-xs font-bold text-white/75 hover:border-[#ffb000] hover:text-[#ffb000] transition-colors">
                 Receber os chamados
               </a>
               <a href="#rede" className="border border-white/20 px-8 py-4 font-space uppercase tracking-widest text-xs font-bold text-white/75 hover:border-[#ffb000] hover:text-[#ffb000] transition-colors">
