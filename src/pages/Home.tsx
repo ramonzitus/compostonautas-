@@ -350,15 +350,12 @@ const Home = () => {
             <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
               Transição em andamento!
             </p>
-
-            {!countdownStarted ? (
               <button
                 onClick={() => setCountdownStarted(true)}
                 className="bg-[#ffb000] text-black px-8 py-5 font-space uppercase tracking-widest text-xs font-bold border-[3px] border-black shadow-[6px_6px_0_#000] hover:translate-x-1 hover:translate-y-1 hover:shadow-[3px_3px_0_#000] transition-all"
               >
                 Ver tempo de chegada
               </button>
-            ) : (
             <p className="max-w-3xl mx-auto text-white/60 text-lg md:text-xl leading-relaxed mb-10">
               Destino: Dia do Compostonauta!
             </p>
@@ -382,7 +379,6 @@ const Home = () => {
                   </div>
                 ))}
               </div>
-            )}
           </div>
         </section>
 
