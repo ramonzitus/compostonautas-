@@ -691,15 +691,13 @@ const Home = () => {
             
             <div className="mt-16 md:mt-20 flex flex-col sm:flex-row justify-center gap-4">
               <a 
-                href="https://chat.whatsapp.com/C6C4HYTg801KH2Ok6cDYdS"
+                href="https://tally.so/r/rj0ozR"
                 className="bg-black text-[#ffb000] px-10 py-5 rounded-full font-space uppercase tracking-widest text-sm font-bold hover:bg-[#1a3d2a] hover:text-white transition-all duration-300 flex items-center gap-4 hover:gap-6 hover:scale-105"
               >
                 Quero ativar meu território <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="https://forms.gle/6XqCzco17T7WSjdV7"
-                target="_blank"
-                rel="noreferrer" 
+                href="#chamados" 
                 className="bg-[#f5f1e8] text-black px-10 py-5 rounded-full font-space uppercase tracking-widest text-sm font-bold border-2 border-black hover:bg-black hover:text-[#ffb000] transition-all duration-300"
               >
                 Receber os chamados
@@ -764,7 +762,9 @@ const Home = () => {
               />
 
               <button
-                type="submit"
+                href="https://forms.gle/6XqCzco17T7WSjdV7"
+                target="_blank"
+                rel="noreferrer"
                 className="w-full bg-black text-[#ffb000] px-6 py-4 font-space uppercase tracking-widest text-xs font-bold hover:bg-[#ffb000] hover:text-black transition-colors"
               >
                 Receber os chamados
