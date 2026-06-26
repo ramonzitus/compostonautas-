@@ -697,7 +697,9 @@ const Home = () => {
                 Quero ativar meu território <ArrowRight className="w-5 h-5" />
               </a>
               <a
-                href="#chamados"
+                href="https://forms.gle/6XqCzco17T7WSjdV7"
+                target="_blank"
+                rel="noreferrer" 
                 className="bg-[#f5f1e8] text-black px-10 py-5 rounded-full font-space uppercase tracking-widest text-sm font-bold border-2 border-black hover:bg-black hover:text-[#ffb000] transition-all duration-300"
               >
                 Receber os chamados
