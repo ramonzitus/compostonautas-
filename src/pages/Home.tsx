@@ -730,10 +730,7 @@ const Home = () => {
               </p>
             </div>
 
-            <form
-              name="chamados"
-              method="POST"
-              data-netlify="true"
+            <div
               className="bg-[#f5f1e8] text-black border-[4px] border-black shadow-[10px_10px_0_#ffb000] p-6 md:p-8"
             >
               <input type="hidden" name="form-name" value="chamados" />
@@ -760,20 +757,19 @@ const Home = () => {
                 placeholder="nome, cidade ou território"
                 className="w-full border-[3px] border-black bg-white px-4 py-4 font-mono text-sm outline-none mb-6"
               />
-
-              <button
+              <a
                 href="https://forms.gle/6XqCzco17T7WSjdV7"
                 target="_blank"
                 rel="noreferrer"
-                className="w-full bg-black text-[#ffb000] px-6 py-4 font-space uppercase tracking-widest text-xs font-bold hover:bg-[#ffb000] hover:text-black transition-colors"
+                className="block w-full bg-black text-[#ffb000] px-6 py-4 font-space uppercase tracking-widest text-xs font-bold text-center hover:bg-[#ffb000] hover:text-black transition-colors"
               >
                 Receber os chamados
-              </button>
+              </a>
 
               <p className="mt-5 font-mono text-[10px] leading-relaxed text-black/55">
                 Sem spam. Só sinais importantes da campanha, da Semana da Compostagem e do Dia do Compostonauta.
               </p>
-            </form>
+            </div>
           </div>
         </section>
         <section id="chamada" className="relative bg-[#0a0a0a] text-[#f5f1e8] px-5 md:px-12 py-28 md:py-40 overflow-hidden grain">
